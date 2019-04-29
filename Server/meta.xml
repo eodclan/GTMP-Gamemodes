@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<meta>
+	<info name="FactionLife" author="DerStr1k3r" type="gamemode" async="true" />
+
+	<!-- Serverside Scripts-->
+	<script src="FactionLife.dll" type="server" lang="compiled" />
+
+	<!-- Clientside Scripts -->
+	<script src="Client/Hud/Carwash.js" type="client" lang="javascript" />
+
+	<file src="Client/jquery.min.js" />
+	<file src="Client/validation.js" />
+	<file src="Client/jquery.js" />
+
+	<!-- Login Scripts -->
+	<file src="Client/assets/logo.png" />
+
+	<script src="Client/System/VehicleMisc/locksound.js" type="client" lang="javascript" />
+	<file src="Client/System/VehicleMisc/locksound.mp3" />	
+	<file src="Client/System/VehicleMisc/unlocksound.mp3" />	
+
+	<script src="Client/Jobs/Taxi/taxi.js" type="client" lang="javascript" />
+	<script src="Client/Login/auth.js" type="client" lang="javascript" />
+	<file src="Client/Login/login.js" />
+	<file src="Client/Login/login.html" />	
+	<file src="Client/font-awesome/css/font-awesome.min.css" />
+	<file src="Client/font-awesome/webfonts/fa-brands-400.ttf" />
+	<file src="Client/font-awesome/webfonts/fa-brands-400.woff" />
+	<file src="Client/font-awesome/webfonts/fa-brands-400.woff2" />
+	<file src="Client/font-awesome/webfonts/fa-solid-900.ttf" />
+	<file src="Client/font-awesome/webfonts/fa-solid-900.woff" />
+	<file src="Client/font-awesome/webfonts/fa-solid-900.woff2" />
+	<file src="Client/fonts/Comfortaa-Regular.ttf" />
+	<file src="Client/fonts/pricedown bl.ttf" />
+	<file src="Client/fonts/Roboto-Bold.ttf" />
+	<file src="Client/fonts/Roboto-Light.ttf" />
+	<file src="Client/fonts/Roboto-Medium.ttf" />
+  <file src="Client/Login/css/reset.css" />
+  <file src="Client/Login/css/style.css" />
+  <file src="Client/Login/css/bootstrap.min.css" />
+  <file src="Client/Login/css/bootstrap-grid.min.css" />
+  <file src="Client/Login/images/site-logo.png" />
+  <file src="Client/Login/images/imageTest1.jpg" />
+  <file src="Client/Login/images/imageTest2.jpg" />
+  <file src="Client/Login/images/imageTest3.jpg" />
+  <file src="Client/Login/fonts/fonts.css" />
+  <file src="Client/Login/fonts/oswald-bold-webfont.woff" />
+  <file src="Client/Login/fonts/oswald-bold-webfont.woff2" />
+  <file src="Client/Login/fonts/oswald-extralight-webfont.woff" />
+  <file src="Client/Login/fonts/oswald-extralight-webfont.woff2" />
+  <file src="Client/Login/fonts/oswald-light-webfont.woff" />
+  <file src="Client/Login/fonts/oswald-light-webfont.woff2" />
+  <file src="Client/Login/fonts/oswald-medium-webfont.woff" />
+  <file src="Client/Login/fonts/oswald-medium-webfont.woff2" />
+  <file src="Client/Login/fonts/oswald-regular-webfont.woff" />
+  <file src="Client/Login/fonts/oswald-regular-webfont.woff2" />
+  <file src="Client/Login/fonts/oswald-semibold-webfont.woff" />
+  <file src="Client/Login/fonts/oswald-semibold-webfont.woff2" />
+  <file src="Client/Login/fa/css/font-awesome.min.css" />
+  <file src="Client/Login/fa/fonts/fontawesome-webfont.woff" />
+  <file src="Client/Login/fa/fonts/fontawesome-webfont.woff2" />
+
+	<script src="Client/Register/Register.js" type="client" lang="javascript" />
+
+	<script src="Client/System/CharacterCreator/CharacterCreator.js" type="client" lang="javascript" />
+	<script src="Client/System/CharacterSelection/CharacterSelection.js" type="client" lang="javascript" />
+	<script src="Client/System/Dev/ClothingCreator.js" type="client" lang="javascript" />
+	<script src="Client/System/ATMMenu/ATMMenu.js" type="client" lang="javascript" />
+	<script src="Client/KeyHandler/KeyHandler.js" type="client" lang="javascript" />
+	<script src="Client/Hud/FactionLife.js" type="client" lang="javascript" />
+	<script src="Client/Hud/Money.js" type="client" lang="javascript" />
+	<script src="Client/Hud/PlayerStatus.js" type="client" lang="javascript" />
+	<script src="Client/Hud/Progressbar.js" type="client" lang="javascript" />
+	<script src="Client/Hud/CommonElements.js" type="client" lang="javascript" />
+	<script src="Client/Hud/medicsearch.js" type="client" lang="javascript" />
+	<script src="Client/System/Sync/Character.js" type="client" lang="javascript" />
+	<script src="Client/System/Spawn/Spawn.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/Animation.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PlayerMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/WalkingStyles.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PR_FL.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/GeldbörseMenu.js" type="client" lang="javascript" />	
+	<script src="Client/System/PlayerMenu/LizenzMenu.js" type="client" lang="javascript" />		
+	<script src="Client/System/PlayerMenu/SchlüsselMenu.js" type="client" lang="javascript" />		
+	<script src="Client/System/PlayerMenu/ServiceListMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PayDayTrigger.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/DispatchMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PlayerAnimationMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PlayerApps.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PlayerClothes.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/PlayerGPS.js" type="client" lang="javascript" />
+	<script src="Client/System/PlayerMenu/DispatchNavi.js" type="client" lang="javascript" />
+	<script src="Client/System/Shop/Shop.js" type="client" lang="javascript" />
+	<script src="Client/System/WeaponLicense/WeaponLicense.js" type="client" lang="javascript" />
+	<script src="Client/System/GarageMenu/GarageMenu.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/GasStation/GasStationMenu.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/GasStation/RefuelProgressbar.js" type="client" lang="javascript" />
+	<script src="Client/System/World/Weather.js" type="client" lang="javascript" />
+	<script src="Client/System/VehicleShop/VehicleShop.js" type="client" lang="javascript" />
+	<script src="Client/System/VehicleMenu/VehicleMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/ClothingShop/ClothingShop.js" type="client" lang="javascript" />
+	<script src="Client/System/Factions/Police/Criminal.js" type="client" lang="javascript" />
+	<script src="Client/System/Factions/Police/CopWeaponMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/Factions/FIB/FIBCriminal.js" type="client" lang="javascript" />
+	
+	<script src="Client/System/idcard/Einburgerungsamt.js" type="client" lang="javascript" />
+
+	<script src="Client/System/PoliceNavi/PoliceNavi.js" type="client" lang="javascript" />
+	<script src="Client/System/PoliceNavi1/PoliceNavi1.js" type="client" lang="javascript" />
+	
+	<script src="Client/System/Factions/FIB/FIBWeaponMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/Factions/Sheriff/SheriffCriminal.js" type="client" lang="javascript" />
+	<script src="Client/System/Factions/Sheriff/SheriffWeaponMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/Factions/Army/ArmyWeaponMenu.js" type="client" lang="javascript" />
+	<script src="Client/System/Support/Support.js" type="client" lang="javascript" />
+	<script src="Client/System/Tastaturbelegung/Tastaturbelegung.js" type="client" lang="javascript" />
+
+	<script src="Client/System/Factions/EMS/DeathEMS.js" type="client" lang="javascript" />
+	<script src="Client/Voice/TS3/Teamspeak.js" type="client" lang="javascript" />
+	<script src="Client/Position/markposition.js" type="client" lang="javascript" />
+	<script src="Client/System/TequiLaLa/TequiLaLa.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/tequilalaui_title_24-7.jpg" />
+
+	<script src="Client/Farmer/Weed.js" type="client" lang="javascript" />
+	<script src="Client/Farmer/Kokain.js" type="client" lang="javascript" />
+
+	<script src="Client/System/VehIndicator/VehIndicator.js" type="client" lang="javascript" />
+
+	<script src="Client/Jobs/Dealer/Dealer.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/Seller/Seller.js" type="client" lang="javascript" />
+
+	<script src="Client/Smartphone/Smartphone.js" type="client" lang="javascript" />
+
+	<script src="Client/Jobs/PaintJob/PaintJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/MillJob/MillJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/PizzaJob/PizzaJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/PostJob/PostJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/FisherJob/FisherJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/BusJob/BusJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/GardenJob/GardenJob.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/EisenMine/EisenMine.js" type="client" lang="javascript" />
+
+	<script src="Client/Hud/Tablet.js" type="client" lang="javascript" />
+
+	<script src="Client/System/WeaponShop/WeaponShop.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/ammunationui_title_24-7.jpg" />
+	<script src="Client/System/BurgerShot/BurgerShot.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/burgershot_title_24-7.jpg" />
+	<script src="Client/Jobs/SushiGarden/SushiGarden.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/sushigardenui_title_24-7.jpg" />
+	<script src="Client/System/VehiclePayNLoud/VehiclePayNLoud.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/vehiclepaynloudui_title_24-7.jpg" />
+
+	<script src="Client/Hud/Speedometer.js" type="client" lang="javascript" />
+	<file src="Client/Hud/speedo.png" />
+	<file src="Client/Hud/voice.png" />
+	<file src="Client/Hud/line.png" />
+	<file src="Client/Hud/fill.png" />
+	<file src="Client/Hud/fuel.png" />
+	<file src="Client/Hud/fill2.png" />
+	<file src="Client/Hud/health.png" />
+	<file src="Client/Hud/caroff.png" />
+	<file src="Client/Hud/caron.png" />
+	<file src="Client/Hud/vehon.png" />
+	<file src="Client/Hud/vehoff.png" />
+	<file src="Client/Hud/seatbelton.png" />
+	<file src="Client/Hud/seatbeltoff.png" />
+	<file src="Client/Hud/img/voice1.png" />
+	<file src="Client/Hud/img/voice2.png" />
+	<file src="Client/Hud/img/voice3.png" />
+
+	<script src="Client/Jobs/Eisen/Eisen.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/EisenSeller/EisenSeller.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/eisenui_title_24-7.jpg" />
+
+	<script src="Client/Jobs/Holz/Holz.js" type="client" lang="javascript" />
+	<script src="Client/Jobs/HolzSeller/HolzSeller.js" type="client" lang="javascript" />
+	<file src="Client/MenuImages/holzui_title_24-7.jpg" />
+	<!-- Clientside Files -->
+	<file src="Client/MenuImages/licenseui_title_24-7.jpg" />
+	<file src="Client/MenuImages/shopui_title_24-7.jpg" />
+	<file src="Client/MenuImages/shopui_title_ltdgasoline.jpg" />
+	<file src="Client/MenuImages/shopui_title_mazebank.jpg" />
+	<file src="Client/MenuImages/Dealerui_title_24-7.jpg" />
+	<file src="Client/Hud/food.png" />
+	<file src="Client/Hud/drink.png" />
+	<file src="Client/Hud/fluid.png" />
+	<file src="Client/Hud/wrench.png" />
+	
+	<settings>
+		<!-- General Settings -->
+		<setting name="server_name" value="~b~[GER/Voice]~b~~b~www.RP-DELUXE.de~b~~b~Whitelist OFFEN~b~" default="RP-Deluxe" description="" />
+		<setting name="server_version" value="0.6" />
+		<setting name="gamemode_name" value="RP-Deluxe" default="FactionLife" description="" />
+		<setting name="whitelist_enabled" value="true" default="false" description="Enable or Disable Whitelist Function" />
+		<setting name="local_address" value="game.faction-life.ml" default="FactionLife" description="" />
+
+		<!-- MySQL Database Settings -->
+		<setting name="mysql_server" value="localhost" default="localhost" description="IP / Domain of the MySQL Database Server" />
+		<setting name="mysql_port" value="3306" default="3306" description="PORT of the MySQL Database Server" />
+		<setting name="mysql_user" value="#####" default="" description="MySQL Username" />
+		<setting name="mysql_password" value="#####" default="" description="MySQL User Password" />
+		<setting name="mysql_database" value="#####" default="" description="MySQL Database Name" />
+	</settings> 
+
+	<assembly ref="System.Data.dll" />
+	<assembly ref="System.Xml.dll" />
+	<assembly ref="MySql.Data.dll" />
+	<assembly ref="MySql.Data.Entity.EF6.dll" />
+	<assembly ref="Newtonsoft.Json.dll" />
+
+</meta>

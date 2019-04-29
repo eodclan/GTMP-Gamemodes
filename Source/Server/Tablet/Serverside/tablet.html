@@ -1,0 +1,185 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            background: transparent;
+        }
+
+        .fltabletbg {
+            background: url(Clientside/bg/fltablet.png) no-repeat;
+            width: 1280px;
+            height: 720px;
+        }
+
+        .fldocketbg {
+            background: url(Clientside/bg/fldocketbg.png) no-repeat;
+            width: 1920px;
+            height: 1080px;
+        }
+
+        .ftnetwork {
+            background: url(Clientside/bg/ftnetwork.png) no-repeat;
+            width: 100%;
+            height: 128px;
+        }
+
+        .flbrowserchat {
+            padding-left: 50px;
+            width: 1280px;
+            height: 720px;
+            padding-top: 41px;
+            overflow: hidden;
+        }
+
+        .flbrowserrules {
+            padding-left: 50px;
+            width: 1280px;
+            height: 720px;
+            padding-top: 41px;
+            overflow: hidden;
+        }
+
+        .flbrowsersupprt {
+            padding-left: 50px;
+            width: 1280px;
+            height: 720px;
+            padding-top: 41px;
+            overflow: hidden;
+        }
+
+        .flbrowserkeyboard {
+            padding-left: 50px;
+            width: 1280px;
+            height: 720px;
+            padding-top: 41px;
+            overflow: hidden;
+        }
+
+        .flchatbg {
+            padding-left: 50px;
+            background: url(Clientside/icons/chat.png) no-repeat;
+            width: 120px;
+            height: 120px;
+            padding-top: 141px;
+        }
+
+        .flkeyboardbg {
+            padding-left: 50px;
+            background: url(Clientside/icons/keyboard.png) no-repeat;
+            width: 120px;
+            height: 120px;
+            padding-top: 141px;
+        }
+
+        .flrulesbg {
+            padding-left: 50px;
+            background: url(Clientside/icons/rules.png) no-repeat;
+            width: 120px;
+            height: 120px;
+            padding-top: 141px;
+        }
+
+        .fltechnicalsupportbg {
+            padding-left: 50px;
+            background: url(Clientside/icons/technical-support.png) no-repeat;
+            width: 120px;
+            height: 120px;
+            padding-top: 141px;
+        }
+
+        #element::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fltabletbg">
+
+
+        <div class="flbrowserchat">
+            <object data="https://flnet.faction-life.ml" width="1180" height="660" type="text/html"></object>
+        </div>
+
+        <div class="flbrowserrules">
+            <object data="https://flnet.faction-life.ml/serverrules.php" width="1180" height="660" type="text/html"></object>
+        </div>
+
+        <div class="flbrowsersupprt">
+            <object data="https://flnet.faction-life.ml/charracter.php" width="1180" height="660" type="text/html"></object>
+        </div>
+
+        <div class="flbrowserkeyboard">
+            <object data="https://flnet.faction-life.ml/charracter.php" width="1180" height="660" type="text/html"></object>
+        </div>
+
+        <div class="fldocketbg">
+            <script>
+                function ShowKeyboard() {
+                    if (document.getElementById('flbrowserchat').style.display == 'none') {
+                        document.getElementById('flbrowserchat').style.display = 'block';
+                        document.getElementById('flbrowserrules').style.display = 'none';
+                        document.getElementById('flbrowsersupprt').style.display = 'none';
+                        CheckIfEdit('taken');
+                    } else {
+                        document.getElementById('flbrowserchat').style.display = 'none';
+                        CheckIfEdit('giveup');
+                    }
+                }
+
+                function ShowRules() {
+                    if (document.getElementById('flbrowserrules').style.display == 'none') {
+                        document.getElementById('flbrowserrules').style.display = 'block';
+                        document.getElementById('flbrowserchat').style.display = 'none';
+                        document.getElementById('flbrowsersupprt').style.display = 'none';
+                        CheckIfEdit('taken');
+                    } else {
+                        document.getElementById('flbrowserrules').style.display = 'none';
+                        CheckIfEdit('giveup');
+                    }
+                }
+
+                function ShowSupport() {
+                    if (document.getElementById('flbrowsersupprt').style.display == 'none') {
+                        document.getElementById('flbrowsersupprt').style.display = 'block';
+                        document.getElementById('flbrowserchat').style.display = 'none';
+                        document.getElementById('flbrowserrules').style.display = 'none';
+                        CheckIfEdit('taken');
+                    } else {
+                        document.getElementById('flbrowsersupprt').style.display = 'none';
+                        CheckIfEdit('giveup');
+                    }
+                }
+
+                function ShowChat() {
+                    if (document.getElementById('flbrowsersupprt').style.display == 'none') {
+                        document.getElementById('flbrowsersupprt').style.display = 'block';
+                        document.getElementById('flbrowserchat').style.display = 'none';
+                        document.getElementById('flbrowserrules').style.display = 'none';
+                        CheckIfEdit('taken');
+                    } else {
+                        document.getElementById('flbrowsersupprt').style.display = 'none';
+                        CheckIfEdit('giveup');
+                    }
+                }
+            </script>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td><a href="#nogo" onclick="ShowKeyboard(); display: none;" class="navLink"><i class="fa fa-edit" title="Bearbeiten"></i> <div class="flkeyboardbg"></div></a></td>
+                        <td><a href="#nogo" onclick="ShowRules(); display: none;" class="navLink"><i class="fa fa-info-circle" title="Bearbeiten"></i> <div class="flrulesbg"></div></a></td>
+                        <td><a href="#nogo" onclick="ShowSupport(); display: none;" class="navLink"><i class="fa fa-file-o" title="Bearbeiten"></i> <div class="fltechnicalsupportbg"></div></a></td>
+                        <td><a href="#nogo" onclick="ShowChat(); display: none;" class="navLink"><i class="fa fa-expeditedssl" title="Bearbeiten"></i> <div class="flchatbg"></div></a></td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

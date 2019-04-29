@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6294160-D1F5-40AD-8A3F-95C0D122C1FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FactionLife</RootNamespace>
+    <AssemblyName>FactionLife</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="GrandTheftMultiplayer.Server, Version=0.1.798.595, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\grandtheftmultiplayer.api.0.1.798.595\lib\net452\GrandTheftMultiplayer.Server.exe</HintPath>
+    </Reference>
+    <Reference Include="GrandTheftMultiplayer.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\grandtheftmultiplayer.api.0.1.798.595\lib\net452\GrandTheftMultiplayer.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.Abstractions.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.EntityFrameworkCore.Relational.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Memory.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Binder.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.2.2.0-preview2-35157\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Options.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.12\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=7.0.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.Entity.7.0.7-m61\lib\net451\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFrameworkCore, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.EntityFrameworkCore.8.0.12\lib\net452\MySql.Data.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.2.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Interactive.Async.3.2.0\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\AdminHandler.cs" />
+    <Compile Include="Server\Base\Constants.cs" />
+    <Compile Include="Server\Base\Enums.cs" />
+    <Compile Include="Server\Base\Settings.cs" />
+    <Compile Include="Server\BurgerShotHandler.cs" />
+    <Compile Include="Server\CharacterHandler.cs" />
+    <Compile Include="Server\ClothingShopHandler.cs" />
+    <Compile Include="Server\ConnectionHandler.cs" />
+    <Compile Include="Server\DatabaseHandler.cs" />
+    <Compile Include="Server\DealerHandler.cs" />
+    <Compile Include="Server\Discord\DiscordService.cs" />
+    <Compile Include="Server\Discord\Embed.cs" />
+    <Compile Include="Server\Discord\Extensions.cs" />
+    <Compile Include="Server\Discord\Webhook.cs" />
+    <Compile Include="Server\EisenHandler.cs" />
+    <Compile Include="Server\EisenSellerHandler.cs" />
+    <Compile Include="Server\FactionHandler\ACLS2Handler.cs" />
+    <Compile Include="Server\FactionHandler\ACLSHandler.cs" />
+    <Compile Include="Server\FactionHandler\EMSHandler.cs" />
+    <Compile Include="Server\FactionHandler\FIBHandler.cs" />
+    <Compile Include="Server\FactionHandler\FraCommands.cs" />
+    <Compile Include="Server\FactionHandler\FraLead.cs" />
+    <Compile Include="Server\FactionHandler\FraUtil.cs" />
+    <Compile Include="Server\FactionHandler\PoliceHandler.cs" />
+    <Compile Include="Server\FactionHandler\SheriffHandler.cs" />
+    <Compile Include="Server\Farming\Eisenbarren.cs" />
+    <Compile Include="Server\Farming\EisenMine.cs" />
+    <Compile Include="Server\Farming\Kokain.cs" />
+    <Compile Include="Server\Farming\Weed.cs" />
+    <Compile Include="Server\FisherSellHandler.cs" />
+    <Compile Include="Server\GarageHandler.cs" />
+    <Compile Include="Server\GasStationHandler.cs" />
+    <Compile Include="Server\GoldHandler.cs" />
+    <Compile Include="Server\GoldSellerHandler.cs" />
+    <Compile Include="Server\HolzHandler.cs" />
+    <Compile Include="Server\HolzSellerHandler.cs" />
+    <Compile Include="Server\Jobs\acls.cs" />
+    <Compile Include="Server\Jobs\acls2.cs" />
+    <Compile Include="Server\Jobs\Bus.cs" />
+    <Compile Include="Server\Jobs\Fahrschule.cs" />
+    <Compile Include="Server\Jobs\Fib.cs" />
+    <Compile Include="Server\Jobs\Fisher.cs" />
+    <Compile Include="Server\Jobs\GardenJob.cs" />
+    <Compile Include="Server\Jobs\Justiz.cs" />
+    <Compile Include="Server\Jobs\MühlJob.cs" />
+    <Compile Include="Server\Jobs\PaintJob.cs" />
+    <Compile Include="Server\Jobs\PizzaJob.cs" />
+    <Compile Include="Server\Jobs\PostJob.cs" />
+    <Compile Include="Server\Jobs\taxi.cs" />
+    <Compile Include="Server\Jobs\TaxiCommands.cs" />
+    <Compile Include="Server\Mechaniker.cs" />
+    <Compile Include="Server\Model\Account.cs" />
+    <Compile Include="Server\Model\ATM.cs" />
+    <Compile Include="Server\Model\BoughtClothing.cs" />
+    <Compile Include="Server\Model\BurgerShot.cs" />
+    <Compile Include="Server\Model\BurgerShotItem.cs" />
+    <Compile Include="Server\Model\BurgerShotMenuItem.cs" />
+    <Compile Include="Server\Model\Character.cs" />
+    <Compile Include="Server\Model\CharacterSelectionItem.cs" />
+    <Compile Include="Server\Model\Clothing.cs" />
+    <Compile Include="Server\Model\ClothingShopJson.cs" />
+    <Compile Include="Server\Model\ClothingShop.cs" />
+    <Compile Include="Server\Model\Dealer.cs" />
+    <Compile Include="Server\Model\DealerItem.cs" />
+    <Compile Include="Server\Model\DealerMenuItem.cs" />
+    <Compile Include="Server\Model\Dispatch.cs" />
+    <Compile Include="Server\Model\Dispatches.cs" />
+    <Compile Include="Server\Model\DoorInfo.cs" />
+    <Compile Include="Server\Model\Eisen.cs" />
+    <Compile Include="Server\Model\EisenItem.cs" />
+    <Compile Include="Server\Model\EisenMenuItem.cs" />
+    <Compile Include="Server\Model\EisenSeller.cs" />
+    <Compile Include="Server\Model\EisenSellerItem.cs" />
+    <Compile Include="Server\Model\EisenSellerMenuItem.cs" />
+    <Compile Include="Server\Model\Fisher.cs" />
+    <Compile Include="Server\Model\FisherItem.cs" />
+    <Compile Include="Server\Model\FisherMenuItem.cs" />
+    <Compile Include="Server\Model\FuelPrices.cs" />
+    <Compile Include="Server\Model\FuelStorage.cs" />
+    <Compile Include="Server\Model\Garage.cs" />
+    <Compile Include="Server\Model\GarageMenuItem.cs" />
+    <Compile Include="Server\Model\GarageSpawn.cs" />
+    <Compile Include="Server\Model\GasStation.cs" />
+    <Compile Include="Server\Model\GasStationMenuItem.cs" />
+    <Compile Include="Server\Model\Gold.cs" />
+    <Compile Include="Server\Model\GoldItem.cs" />
+    <Compile Include="Server\Model\GoldMenuItem.cs" />
+    <Compile Include="Server\Model\GoldSeller.cs" />
+    <Compile Include="Server\Model\GoldSellerItem.cs" />
+    <Compile Include="Server\Model\GoldSellerMenuItem.cs" />
+    <Compile Include="Server\Model\Holz.cs" />
+    <Compile Include="Server\Model\HolzItem.cs" />
+    <Compile Include="Server\Model\HolzMenuItem.cs" />
+    <Compile Include="Server\Model\HolzSeller.cs" />
+    <Compile Include="Server\Model\HolzSellerItem.cs" />
+    <Compile Include="Server\Model\HolzSellerMenuItem.cs" />
+    <Compile Include="Server\Model\HudColor.cs" />
+    <Compile Include="Server\Model\InventoryItem.cs" />
+    <Compile Include="Server\Model\InventoryMenuItem.cs" />
+    <Compile Include="Server\Model\IplService.cs" />
+    <Compile Include="Server\Model\Item.cs" />
+    <Compile Include="Server\Model\License.cs" />
+    <Compile Include="Server\Model\LicenseItem.cs" />
+    <Compile Include="Server\Model\LicenseMenuItem.cs" />
+    <Compile Include="Server\Model\MenuItem.cs" />
+    <Compile Include="Server\Model\Message.cs" />
+    <Compile Include="Server\Model\Outfit.cs" />
+    <Compile Include="Server\Model\OwnedVehicle.cs" />
+    <Compile Include="Server\Model\Player.cs" />
+    <Compile Include="Server\Model\PlayerWeapon.cs" />
+    <Compile Include="Server\Model\Seller.cs" />
+    <Compile Include="Server\Model\SellerItem.cs" />
+    <Compile Include="Server\Model\SellerMenuItem.cs" />
+    <Compile Include="Server\Model\Shop.cs" />
+    <Compile Include="Server\Model\ShopItem.cs" />
+    <Compile Include="Server\Model\ShopMenuItem.cs" />
+    <Compile Include="Server\Model\SpawnPosition.cs" />
+    <Compile Include="Server\Model\TequiLaLa.cs" />
+    <Compile Include="Server\Model\TequiLaLaItem.cs" />
+    <Compile Include="Server\Model\TequiLaLaMenuItem.cs" />
+    <Compile Include="Server\Model\VehicleInfo.cs" />
+    <Compile Include="Server\Model\PayNLoud.cs" />
+    <Compile Include="Server\Model\PayNLoudItem.cs" />
+    <Compile Include="Server\Model\PayNLoudMenuItem.cs" />
+    <Compile Include="Server\Model\VehicleShop.cs" />
+    <Compile Include="Server\Model\VehicleShopMenuItem.cs" />
+    <Compile Include="Server\Model\WeaponLicense.cs" />
+    <Compile Include="Server\Model\WeaponLicenseItem.cs" />
+    <Compile Include="Server\Model\WeaponLicenseMenuItem.cs" />
+    <Compile Include="Server\Model\WeaponShop.cs" />
+    <Compile Include="Server\Model\WeaponShopItem.cs" />
+    <Compile Include="Server\Model\WeaponShopMenuItem.cs" />
+    <Compile Include="Server\MoneyHandler.cs" />
+    <Compile Include="Server\OnUpdateService.cs" />
+    <Compile Include="Server\PayDay\TimeCheck.cs" />
+    <Compile Include="Server\SellerHandler.cs" />
+    <Compile Include="Server\Services\AccountService\AccountService.cs" />
+    <Compile Include="Server\Services\AccountService\WhiteListService.cs" />
+    <Compile Include="Server\Services\AdminService\AdminService.cs" />
+    <Compile Include="Server\Services\BlipService\BlipService.cs" />
+    <Compile Include="Server\Services\BurgerShotService\BurgerShotEnums.cs" />
+    <Compile Include="Server\Services\BurgerShotService\BurgerShotService.cs" />
+    <Compile Include="Server\Services\CharacterService\CharacterEnums.cs" />
+    <Compile Include="Server\Services\CharacterService\CharacterService.cs" />
+    <Compile Include="Server\Services\CharacterService\DispatchService.cs" />
+    <Compile Include="Server\Services\CharacterService\GeldbörseMenuService.cs" />
+    <Compile Include="Server\Services\CharacterService\IDCardService.cs" />
+    <Compile Include="Server\Services\CharacterService\LizenzMenuService.cs" />
+    <Compile Include="Server\Services\CharacterService\PlayerAnimationMenu.cs" />
+    <Compile Include="Server\Services\CharacterService\PlayerAppsMenu.cs" />
+    <Compile Include="Server\Services\CharacterService\PlayerClothesMenu.cs" />
+    <Compile Include="Server\Services\CharacterService\PlayerMenuService.cs" />
+    <Compile Include="Server\Services\CharacterService\PlayersCommandsRegular.cs" />
+    <Compile Include="Server\Services\CharacterService\SchlüsselMenuService.cs" />
+    <Compile Include="Server\Services\ClothingService\ClothingEnums.cs" />
+    <Compile Include="Server\Services\ClothingService\ClothingService.cs" />
+    <Compile Include="Server\Services\ClothingService\ClothingShopService.cs" />
+    <Compile Include="Server\Services\CrouchService\CrouchService.cs" />
+    <Compile Include="Server\Services\DealerService\DealerEnums.cs" />
+    <Compile Include="Server\Services\DealerService\DealerService.cs" />
+    <Compile Include="Server\Services\DoorService\DoorService.cs" />
+    <Compile Include="Server\Services\EisenSellerService\EisenSellerEnums.cs" />
+    <Compile Include="Server\Services\EisenSellerService\EisenSellerService.cs" />
+    <Compile Include="Server\Services\EisenService\EisenEnums.cs" />
+    <Compile Include="Server\Services\EisenService\EisenService.cs" />
+    <Compile Include="Server\Services\FactionService\ACLSService.cs" />
+    <Compile Include="Server\Services\FactionService\CLient.cs" />
+    <Compile Include="Server\Services\FactionService\EMSService.cs" />
+    <Compile Include="Server\Services\FactionService\FactionEnums.cs" />
+    <Compile Include="Server\Services\FactionService\FactionService.cs" />
+    <Compile Include="Server\Services\FactionService\FIBService.cs" />
+    <Compile Include="Server\Services\FactionService\PoliceService.cs" />
+    <Compile Include="Server\Services\FactionService\PoliceSirensService.cs" />
+    <Compile Include="Server\Services\FactionService\SheriffService.cs" />
+    <Compile Include="Server\Services\FactionService\SWATService.cs" />
+    <Compile Include="Server\Services\FisherSellService\FisherSellEnums.cs" />
+    <Compile Include="Server\Services\FisherSellService\FisherSellService.cs" />
+    <Compile Include="Server\Services\GoldSellerService\GoldSellerEnums.cs" />
+    <Compile Include="Server\Services\GoldSellerService\GoldSellerService.cs" />
+    <Compile Include="Server\Services\GoldService3\GoldEnums.cs" />
+    <Compile Include="Server\Services\GoldService3\GoldService.cs" />
+    <Compile Include="Server\Services\HolzService\HolzEnums.cs" />
+    <Compile Include="Server\Services\HolzService\HolzService.cs" />
+    <Compile Include="Server\Services\HolzSellerService\HolzSellerEnums.cs" />
+    <Compile Include="Server\Services\HolzSellerService\HolzSellerService.cs" />
+    <Compile Include="Server\Services\InterfaceService\ProgressBarService.cs" />
+    <Compile Include="Server\Services\InterfaceService\ScreenService.cs" />
+    <Compile Include="Server\Services\ItemService\ItemEnums.cs" />
+    <Compile Include="Server\Services\ItemService\ItemService.cs" />
+    <Compile Include="Server\Services\LicenseService\LicenseEnums.cs" />
+    <Compile Include="Server\Services\LicenseService\LicenseService.cs" />
+    <Compile Include="Server\Services\MoneyService\ATMService.cs" />
+    <Compile Include="Server\Services\MoneyService\GiveMoney.cs" />
+    <Compile Include="Server\Services\MoneyService\MoneyService.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService1.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService10.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService11.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService12.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService13.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService14.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService15.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService16.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService17.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService18.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService19.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService2.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService20.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService21.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService22.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService23.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService24.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService25.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService26.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService27.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService28.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService29.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService3.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService30.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService31.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService32.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService33.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService34.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService35.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService36.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService37.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService38.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService39.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService4.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService40.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService41.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService42.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService43.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService44.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService5.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService6.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService7.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService8.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenService9.cs" />
+    <Compile Include="Server\Services\OrangenService\OrangenVera.cs" />
+    <Compile Include="Server\Services\RobBankService\RobBank.cs" />
+    <Compile Include="Server\Services\SellerService\SellerEnums.cs" />
+    <Compile Include="Server\Services\SellerService\SellerService.cs" />
+    <Compile Include="Server\Services\ShopService\ShopEnums.cs" />
+    <Compile Include="Server\Services\ShopService\ShopRaubService.cs" />
+    <Compile Include="Server\Services\ShopService\ShopService.cs" />
+    <Compile Include="Server\Services\TeleportService\KnastService.cs" />
+    <Compile Include="Server\Services\TeleportService\KrankenhausService.cs" />
+    <Compile Include="Server\Services\TequiLaLaService\TequiLaLaEnums.cs" />
+    <Compile Include="Server\Services\TequiLaLaService\TequiLaLaService.cs" />
+    <Compile Include="Server\Services\VehiclePayNLoudService\PayNLoudServiceEnums.cs" />
+    <Compile Include="Server\Services\VehiclePayNLoudService\PayNLoudServiceService.cs" />
+    <Compile Include="Server\Services\VehicleService\ANPRService.cs" />
+    <Compile Include="Server\Services\VehicleService\Carwash.cs" />
+    <Compile Include="Server\Services\VehicleService\GarageService.cs" />
+    <Compile Include="Server\Services\VehicleService\GasStationService.cs" />
+    <Compile Include="Server\Services\VehicleService\VehicleEnums.cs" />
+    <Compile Include="Server\Services\VehicleService\VehicleService.cs" />
+    <Compile Include="Server\Services\VehicleService\VehicleShopService.cs" />
+    <Compile Include="Server\Services\VoiceService\Teamspeak.cs" />
+    <Compile Include="Server\Services\WaffenService\AKMService.cs" />
+    <Compile Include="Server\Services\WaffenService\AKService.cs" />
+    <Compile Include="Server\Services\WalkingService\HelperService.cs" />
+    <Compile Include="Server\Services\WalkingService\RoleplayService.cs" />
+    <Compile Include="Server\Services\WalkingService\WalkingService.cs" />
+    <Compile Include="Server\Services\WantedService\WantedService.cs" />
+    <Compile Include="Server\Services\WeaponLicenseService\WeaponLicenseEnums.cs" />
+    <Compile Include="Server\Services\WeaponLicenseService\WeaponLicenseService.cs" />
+    <Compile Include="Server\Services\WeaponShopService\WeaponShopEnums.cs" />
+    <Compile Include="Server\Services\WeaponShopService\WeaponShopService.cs" />
+    <Compile Include="Server\Services\WorldService\TimeService.cs" />
+    <Compile Include="Server\Services\WorldService\WeatherService.cs" />
+    <Compile Include="Server\SessionHandler.cs" />
+    <Compile Include="Server\ShopHandler.cs" />
+    <Compile Include="Server\SpawnHandler.cs" />
+    <Compile Include="Server\TequiLaLaHandler.cs" />
+    <Compile Include="Server\VehicleHandler.cs" />
+    <Compile Include="Server\VehiclePayNLoudHandler.cs" />
+    <Compile Include="Server\VehicleShopHandler.cs" />
+    <Compile Include="Server\WeaponLicenseHandler.cs" />
+    <Compile Include="Server\WeaponShopHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\ATMMenu\ATMMenu.ts" />
+    <TypeScriptCompile Include="Client\CharacterCreator\CharacterCreator.ts" />
+    <TypeScriptCompile Include="Client\CharacterSelection\CharacterSelection.ts" />
+    <TypeScriptCompile Include="Client\ClothingShop\ClothingShop.ts" />
+    <TypeScriptCompile Include="Client\Dealer\Dealer.ts" />
+    <TypeScriptCompile Include="Client\Dev\OutfitCreator.ts" />
+    <TypeScriptCompile Include="Client\Dev\ClothingCreator.ts" />
+    <TypeScriptCompile Include="Client\Factions\EMS\DeathEMS.ts" />
+    <TypeScriptCompile Include="Client\Factions\Police\CopWeaponMenu.ts" />
+    <TypeScriptCompile Include="Client\Factions\Police\Criminal.ts" />
+    <TypeScriptCompile Include="Client\GarageMenu\GarageMenu.ts" />
+    <TypeScriptCompile Include="Client\GasStation\GasStationMenu.ts" />
+    <TypeScriptCompile Include="Client\GasStation\RefuelProgressbar.ts" />
+    <TypeScriptCompile Include="Client\HUD\ammun.ts" />
+    <TypeScriptCompile Include="Client\HUD\CommonElements.ts" />
+    <TypeScriptCompile Include="Client\HUD\FactionLife.ts" />
+    <TypeScriptCompile Include="Client\HUD\Money.ts" />
+    <TypeScriptCompile Include="Client\HUD\PlayerStatus.ts" />
+    <TypeScriptCompile Include="Client\HUD\Progressbar.ts" />
+    <TypeScriptCompile Include="Client\KeyHandler\KeyHandler.ts" />
+    <TypeScriptCompile Include="Client\License\License.ts" />
+    <TypeScriptCompile Include="Client\Login\Login.ts" />
+    <TypeScriptCompile Include="Client\PlayerMenu\PlayerMenu.ts" />
+    <TypeScriptCompile Include="Client\Position\markposition.ts" />
+    <TypeScriptCompile Include="Client\Register\Register.ts" />
+    <TypeScriptCompile Include="Client\Seller\Seller.ts" />
+    <TypeScriptCompile Include="Client\Shop\Shop.ts" />
+    <TypeScriptCompile Include="Client\Spawn\Spawn.ts" />
+    <TypeScriptCompile Include="Client\Sync\Character.ts" />
+    <TypeScriptCompile Include="Client\VehicleMenu\VehicleMenu.ts" />
+    <TypeScriptCompile Include="Client\VehicleShop\VehicleShop.ts" />
+    <TypeScriptCompile Include="Client\World\Weather.ts" />
+    <TypeScriptCompile Include="types-gt-mp\Declarations.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.GUI.CEF.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Javascript.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Javascript.ScriptContext.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Models.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Models.Game.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Sound.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Sync.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Shared.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Shared.Math.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.Math.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.Native.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.NaturalMotion.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.UI.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\index.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\Microsoft.ClearScript.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIMenu.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIMenuItem.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIResText.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Collections.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Collections.Generic.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Drawing.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Windows.Forms.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="meta.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Server\Tablet\Serverside\tablet.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\TS3\" />
+    <Folder Include="Server\Animation\" />
+    <Folder Include="Server\Handy\Clientside\bg\" />
+    <Folder Include="Server\Handy\Clientside\icons\" />
+    <Folder Include="Server\Handy\Serverside\" />
+    <Folder Include="Server\IDcards\Clientside\bg\" />
+    <Folder Include="Server\IDcards\Clientside\icons\" />
+    <Folder Include="Server\Shop\" />
+    <Folder Include="Server\Tablet\Clientside\bg\" />
+    <Folder Include="Server\Tablet\Clientside\icons\" />
+    <Folder Include="types-gt-mp\Definitions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+</Project>
